@@ -149,7 +149,7 @@ public class CLIExamples {
     if (!line.isValid() && line.isAskingForHelp()) {
       StringBuilder builder = new StringBuilder();
       cli.usage(builder);
-      stream.print(builder.toString());
+            stream.print(builder);
     }
   }
 }
