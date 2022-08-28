@@ -84,7 +84,7 @@ public class JsonPointerImpl implements JsonPointer {
 
   @Override
   public boolean isRootPointer() {
-    return decodedTokens.size() == 0;
+    return decodedTokens.isEmpty();
   }
 
   @Override
