@@ -308,15 +308,7 @@ public class HttpServerWorker implements Handler<Channel> {
     }
     HttpServerMetrics metrics = (HttpServerMetrics) server.getMetrics();
     VertxHandler<Http1xServerConnection> handler = VertxHandler.create(chctx -> {
-      Http1xServerConnection conn = new Http1xServerConnection(
-        streamContextSupplier,
-        sslHelper,
-        options,
-        chctx,
-        context,
-        serverOrigin,
-        metrics);
-      return conn;
+      return new Http1xServerConnection(streamContextSupplier, sslHelper, options, chctx, context, serverOrigin, metrics);
     });
     pipeline.addLast("handler", handler);
     Http1xServerConnection conn = handler.getConnection();
