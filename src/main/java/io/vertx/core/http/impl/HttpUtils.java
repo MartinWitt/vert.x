@@ -234,7 +234,7 @@ public final class HttpUtils {
     }
 
     // add trailing slash if not set
-    if (pathname.length() == 0) {
+    if (pathname.isEmpty()) {
       return "/";
     }
 
@@ -399,7 +399,7 @@ public final class HttpUtils {
         path = _ref.getRawPath();
         query = _ref.getRawQuery();
       } else {
-        if (_ref.getRawPath().length() == 0) {
+        if (_ref.getRawPath().isEmpty()) {
           path = base.getRawPath();
           if (_ref.getRawQuery() != null) {
             query = _ref.getRawQuery();
@@ -413,7 +413,7 @@ public final class HttpUtils {
             // Merge paths
             String mergedPath;
             String basePath = base.getRawPath();
-            if (base.getAuthority() != null && basePath.length() == 0) {
+            if (base.getAuthority() != null && basePath.isEmpty() ) {
               mergedPath = "/" + _ref.getRawPath();
             } else {
               int index = basePath.lastIndexOf('/');
@@ -438,7 +438,7 @@ public final class HttpUtils {
    * Extract the path out of the uri.
    */
   static String parsePath(String uri) {
-    if (uri.length() == 0) {
+    if (uri.isEmpty()) {
       return "";
     }
     int i;
