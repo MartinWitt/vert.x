@@ -266,7 +266,7 @@ public class VertxCommandLauncher extends UsageMessageFormatter {
   protected void printCommandUsage(CLI cli) {
     StringBuilder builder = new StringBuilder();
     cli.usage(builder, getCommandLinePrefix());
-    getPrintStream().println(builder.toString());
+      getPrintStream().println(builder);
   }
 
   protected void printGenericExecutionError(CLI cli, CLIException e) {
@@ -285,7 +285,7 @@ public class VertxCommandLauncher extends UsageMessageFormatter {
     StringBuilder builder = new StringBuilder();
     buildWrapped(builder, 0, "The command '" + command + "' is not a valid command." + getNewLine()
         + "See '" + getCommandLinePrefix() + " --help'");
-    getPrintStream().println(builder.toString());
+      getPrintStream().println(builder);
   }
 
   protected void printGlobalUsage() {
@@ -301,8 +301,7 @@ public class VertxCommandLauncher extends UsageMessageFormatter {
     builder.append(getNewLine()).append(getNewLine());
 
     buildWrapped(builder, 0, "Run '" + getCommandLinePrefix() + " COMMAND --help' for more information on a command.");
-
-    getPrintStream().println(builder.toString());
+      getPrintStream().println(builder);
   }
 
   protected String getCommandLinePrefix() {
