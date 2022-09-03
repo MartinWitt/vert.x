@@ -44,7 +44,7 @@ public class VertxLoggerFormatter extends java.util.logging.Formatter {
         PrintWriter pw = new PrintWriter(sw);
         record.getThrown().printStackTrace(pw);
         pw.close();
-        sb.append(sw.toString());
+        sb.append(sw);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
