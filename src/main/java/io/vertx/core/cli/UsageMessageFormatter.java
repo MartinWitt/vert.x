@@ -412,7 +412,7 @@ public class UsageMessageFormatter {
   }
 
   public static boolean isNullOrEmpty(String s) {
-    return s == null || s.trim().length() == 0;
+    return s == null || s.trim().isEmpty() ;
   }
 
   /**
@@ -460,7 +460,7 @@ public class UsageMessageFormatter {
         buf.append(option.getChoices().stream().collect(Collectors.joining(", ", "{", "}")));
       } else if (option.acceptValue()) {
         String argName = option.getArgName();
-        if (argName != null && argName.length() == 0) {
+        if (argName != null && argName.isEmpty() ) {
           // if the option has a blank argname
           buf.append(' ');
         } else {
@@ -690,7 +690,7 @@ public class UsageMessageFormatter {
    * @return The String of without the trailing padding
    */
   public static String rtrim(String s) {
-    if (s == null || s.length() == 0) {
+    if (s == null || s.isEmpty() ) {
       return s;
     }
 
